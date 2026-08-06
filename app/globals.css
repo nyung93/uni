@@ -406,3 +406,129 @@ select,input[type=text],input[type=date],input[type=number],input[type=email],in
 .form-section .form-label{width:140px;text-align:right;font-weight:bold;font-size:12px;flex-shrink:0;}
 .form-actions{text-align:center;margin-top:16px;display:flex;gap:8px;justify-content:center;align-items:center;}
 .note-inline{font-size:11.5px;color:#95a0ac;}
+
+/* =========================================================
+   관리자 공통 (A.2 · A.5 · A.6 · B.1 · B.2)
+   ========================================================= */
+.page-title .pid{font-size:10px;letter-spacing:.5px;}
+
+/* 검색 패널 */
+.filter-special{background:#fff;border:1px solid var(--bd2);border-radius:8px;padding:13px 16px;}
+.ftable{width:100%;border-collapse:collapse;}
+.ftable td{padding:5px 0;vertical-align:middle;}
+.ftable td.lb{width:84px;font-size:11.5px;color:var(--sub);padding-right:8px;white-space:nowrap;}
+.ftable td.ct{padding-right:20px;width:24%;white-space:nowrap;}
+.w-full{width:100%;} .w-half{width:calc(50% - 7px);}
+.search-act{display:flex;justify-content:flex-end;align-items:center;gap:6px;margin-top:10px;padding-top:10px;border-top:1px solid var(--bd2);}
+
+/* 집계 카드 */
+.stat-cards{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 12px;}
+.stat-card{flex:1;min-width:90px;background:var(--bg);border-radius:6px;padding:10px 10px;text-align:center;}
+.stat-card .l{font-size:10.5px;color:var(--sub);}
+.stat-card .v{font-size:19px;font-weight:bold;margin-top:3px;line-height:1.1;}
+
+/* 일괄 제어 */
+.batch{display:flex;align-items:center;gap:6px;margin-bottom:10px;flex-wrap:wrap;}
+.batch .pfx{color:var(--green);font-size:11.5px;font-weight:bold;margin-right:4px;}
+.batch .sp{margin-left:auto;}
+
+/* 하단 유틸 (좌측 버튼 + 중앙 페이징 병렬 배치) */
+.admin-bottom{display:flex;align-items:center;margin-top:14px;position:relative;}
+.admin-pagination{display:flex;list-style:none;gap:2px;position:absolute;left:0;right:0;justify-content:center;}
+.admin-pagination a{display:block;padding:5px 10px;border:1px solid var(--bd);background:#fff;color:var(--sub);text-decoration:none;font-size:11.5px;border-radius:2px;}
+.admin-pagination li.active a{background:var(--navy);color:#fff;border-color:var(--navy);}
+
+/* 관리자 데이터 그리드 */
+.grid-wrap{background:#fff;border:1px solid var(--bd2);border-radius:8px;padding:16px;}
+.grid{width:100%;border-collapse:collapse;font-size:11.5px;border-top:2px solid var(--blue);}
+.grid th{background:var(--bg);color:var(--sub);font-weight:normal;padding:8px 6px;border-bottom:1px solid var(--bd2);text-align:center;}
+.grid th.sortable{cursor:pointer;}
+.grid th.sortable::after{content:' ↕';color:#a9b1ba;font-size:9px;}
+.grid td{padding:7px 6px;text-align:center;border-bottom:1px solid #eef0f1;}
+.grid td.mn{text-align:left;}
+.grid td.link{color:var(--blue);text-decoration:underline;cursor:pointer;background:none;border:none;font-size:11.5px;}
+.grid tr.off{opacity:.5;}
+.grid tr.off td.mn{text-decoration:line-through;}
+.row-act{display:inline-flex;gap:4px;justify-content:center;}
+.no-mail{color:var(--red);font-size:10.5px;}
+
+.tag{padding:2px 8px;border-radius:3px;font-size:10px;font-weight:bold;white-space:nowrap;display:inline-block;}
+.t-done{background:#e8f5e9;color:#2e7d32;} .t-wait{background:#fff3e0;color:#e65100;} .t-canc{background:#fce4ec;color:#c62828;}
+.t-open{background:#e8f0fe;color:#1a56c4;} .t-closed{background:#f0f2f3;color:#95a0ac;} .t-tie{background:#fff3e0;color:#e65100;}
+
+/* 배지 미니 아이콘 (관리자 그리드용) */
+.badge-med{width:21px;height:21px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
+           font-size:10px;color:#fff;margin-right:4px;vertical-align:middle;flex-shrink:0;}
+.bm-silver{background:radial-gradient(circle at 35% 30%,#e9edf1,#aab4bf);border:1px solid #cfd6dd;color:#5a6472;}
+.bm-gold{background:radial-gradient(circle at 35% 30%,#ffe08a,#e0a92e);border:1px solid #f2cf6b;color:#7a5a10;}
+.bm-none{background:#eef0f1;border:1px dashed #cfd4d9;color:#c2c8cf;}
+
+/* 정책 안내 (A.6) */
+.policy-grp{border:1px solid var(--bd2);border-radius:6px;margin-bottom:10px;overflow:hidden;}
+.policy-grp:last-child{margin-bottom:0;}
+.policy-cap{background:var(--bg);padding:7px 11px;font-weight:bold;font-size:11.5px;border-bottom:1px solid var(--bd2);}
+.policy-body{padding:10px 12px;}
+.mini-tb{width:100%;border-collapse:collapse;font-size:10.5px;}
+.mini-tb th{background:#fafbfb;padding:5px 6px;border:1px solid var(--bd2);color:var(--sub);font-weight:bold;text-align:center;}
+.mini-tb td{padding:5px 6px;border:1px solid var(--bd2);text-align:center;}
+.mini-tb td.al{text-align:left;}
+.law-box{background:#f9fafb;border:1px solid var(--bd2);border-radius:5px;padding:10px 12px;font-size:10.5px;line-height:1.75;color:var(--text);}
+.law-box .lt{font-weight:bold;margin-bottom:4px;}
+.law-box .ind{padding-left:14px;}
+
+/* 팝업 / 모달 (A.6 지원자 상세) */
+.modal-overlay{position:fixed;inset:0;background:rgba(38,54,79,.45);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px;}
+.modal-box{background:#fff;border-radius:10px;width:100%;max-width:640px;max-height:88vh;overflow-y:auto;box-shadow:0 20px 50px rgba(0,0,0,.25);}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--bd2);}
+.modal-head .tt{font-size:13.5px;font-weight:bold;}
+.modal-close{background:none;border:none;font-size:18px;color:var(--sub);cursor:pointer;line-height:1;}
+.modal-body{padding:16px 18px;}
+.pp-sec{font-size:11.5px;font-weight:bold;color:var(--text);margin:12px 0 6px;}
+.pp-sec:first-child{margin-top:0;}
+.pp-score{display:flex;align-items:center;gap:14px;background:var(--bg);border:1px solid var(--bd2);border-radius:6px;padding:10px 12px;}
+.pp-medal-wrap{flex-shrink:0;text-align:center;width:64px;}
+.pp-medal{width:48px;height:48px;font-size:18px;}
+.pp-medal-lb{font-size:10px;color:var(--sub);margin-top:5px;white-space:nowrap;}
+
+/* =========================================================
+   B.1 비교과 프로그램 등록
+   ========================================================= */
+.grp{border:1px solid var(--bd2);border-radius:8px;margin-bottom:14px;overflow:hidden;}
+.grp:last-child{margin-bottom:0;}
+.grp-cap{background:var(--bg);padding:9px 14px;display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:bold;border-bottom:1px solid var(--bd2);}
+.grp-cap .num{background:var(--navy);color:#fff;width:21px;height:21px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:bold;flex-shrink:0;}
+.grp-cap .tail{margin-left:auto;font-size:11px;font-weight:normal;color:var(--sub);}
+.grp-cap .new{background:#eef2fb;color:var(--navy);font-size:10px;padding:1px 8px;border-radius:8px;font-weight:bold;}
+.grp-body{padding:13px 15px;background:#fff;}
+
+.sub{margin-bottom:12px;}
+.sub:last-child{margin-bottom:0;}
+.sub-cap{display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:bold;color:var(--sub);margin-bottom:7px;}
+.sub-cap .mark{background:var(--bg);color:var(--sub);font-size:10.5px;font-weight:bold;padding:2px 8px;border-radius:4px;white-space:nowrap;}
+.sub-cap .icon{width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0;}
+.sub-cap .tail{margin-left:auto;font-size:10.5px;font-weight:normal;color:#9aa3ae;}
+
+.sw{display:inline-flex;border:1px solid var(--bd);border-radius:14px;overflow:hidden;font-size:11px;cursor:pointer;}
+.sw span{padding:4px 14px;}
+.sw span.on{background:#eef2fb;color:var(--navy);font-weight:bold;}
+.sw span.off{background:#fff;color:#bbb;}
+
+.upload{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--sub);}
+
+.std-box{background:#eef2fb;border:1px solid #cfdaf5;border-radius:5px;padding:9px 12px;
+         font-size:10.5px;color:var(--navy);line-height:1.6;margin-top:6px;}
+.std-box b{color:var(--navy);}
+
+.mini-grid{width:100%;border-collapse:collapse;font-size:10.5px;margin-top:9px;}
+.mini-grid th{background:var(--bg);padding:6px;border:1px solid var(--bd2);color:var(--sub);font-weight:bold;}
+.mini-grid td{padding:6px;border:1px solid var(--bd2);text-align:center;}
+
+/* =========================================================
+   B.2 비교과 프로그램 통계
+   ========================================================= */
+.area-row{display:grid;grid-template-columns:70px 1fr 56px;align-items:center;gap:10px;margin:8px 0;font-size:11.5px;}
+.area-row .an{font-weight:bold;color:var(--sub);}
+.area-row .bar{height:16px;border-radius:8px;background:var(--bg);overflow:hidden;}
+.area-row .bar i{display:block;height:100%;border-radius:8px;}
+.area-row .cnt{text-align:right;font-weight:bold;}
+.a-cr i{background:var(--cr);} .a-em i{background:var(--em);} .a-gl i{background:var(--gl);}
