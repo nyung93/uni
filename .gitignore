@@ -1,3 +1,10 @@
+# Maven / Java
+target/
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+HELP.md
+
 # Logs
 logs
 *.log

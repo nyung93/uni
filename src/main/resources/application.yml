@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: experience-portal
+  thymeleaf:
+    cache: false
+  web:
+    resources:
+      cache:
+        cachecontrol:
+          no-cache: true

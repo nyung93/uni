@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="content">
+
+  <div class="crumb">회원관리 <b>›</b> 회원가입 <b>›</b> 초·중·고 회원가입</div>
+  <div class="page-title-row"><span class="page-title">초·중·고 회원가입</span></div>
+
+  <form class="card-box" style="max-width:720px;margin:0 auto;" th:action="@{/account/signup}" method="post"
+        onsubmit="alert('가입 신청이 접수되었습니다. (프로토타입)');">
+
+    <!-- 계정 정보 -->
+    <div class="form-section">
+      <div class="sec-title">계정 정보</div>
+      <div class="form-row">
+        <div class="form-label">아이디<span class="req">*</span></div>
+        <div class="form-ctrl">
+          <input type="text" class="mf-input" style="width:30%;" placeholder="아이디">
+          <span class="note-inline" style="font-size:13px;">@</span>
+          <input type="text" class="mf-input" style="width:30%;" placeholder="주소 (예: naver.com)">
+          <button type="button" class="btn btn-navy btn-mini" onclick="comingSoonAlert()">중복확인</button>
+          <span class="help">* 아이디는 이메일 주소로 사용합니다.</span>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-label">비밀번호<span class="req">*</span></div>
+        <div class="form-ctrl">
+          <input type="password" class="mf-input" style="width:55%;">
+          <span class="help">* 영대문자·소문자·숫자·특수문자 중 2종 이상 조합, 10자 이상</span>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-label">비밀번호 확인<span class="req">*</span></div>
+        <div class="form-ctrl"><input type="password" class="mf-input" style="width:55%;"></div>
+      </div>
+      <div style="padding:0 13px 12px;">
+        <div class="callout">
+          <b>안내</b> &nbsp;부모님 이메일로 가입하는 경우, 인증메일 및 디지털 배지 확인이 어려울 수 있습니다.
+        </div>
+      </div>
+    </div>
+
+    <!-- 개인 정보 -->
+    <div class="form-section">
+      <div class="sec-title">개인 정보</div>
+      <div class="form-row">
+        <div class="form-label">이름<span class="req">*</span></div>
+        <div class="form-ctrl"><input type="text" class="mf-input" style="width:45%;"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-label">회원구분<span class="req">*</span></div>
+        <div class="form-ctrl">
+          <div class="seg-toggle">
+            <span class="seg active" onclick="selectSeg(this)">초등학생</span><span class="seg" onclick="selectSeg(this)">중학생</span><span class="seg" onclick="selectSeg(this)">고등학생</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 학교 정보 -->
+    <div class="form-section">
+      <div class="sec-title">학교 정보</div>
+      <div class="form-row">
+        <div class="form-label">학교<span class="req">*</span></div>
+        <div class="form-ctrl">
+          <input type="text" class="mf-input" style="width:50%;" placeholder="학교명 검색">
+          <button type="button" class="btn btn-grey btn-mini" onclick="comingSoonAlert()">학교 검색</button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-label">학년<span class="req">*</span></div>
+        <div class="form-ctrl">
+          <select style="width:130px;"><option>학년 선택</option></select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-label">반 / 번호<span class="req">*</span></div>
+        <div class="form-ctrl">
+          <input type="number" class="mf-input" style="width:80px;"> <span class="help">반</span>
+          <input type="number" class="mf-input" style="width:80px;margin-left:8px;"> <span class="help">번호</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 약관 · 스팸방지 -->
+    <div class="form-section">
+      <div class="sec-title">약관 동의 · 스팸방지</div>
+      <div class="form-row">
+        <div class="form-label">개인정보 동의<span class="req">*</span></div>
+        <div class="form-ctrl">
+          <span class="check-item" onclick="toggleCheck(this.querySelector('.check-box'))"><span class="check-box"></span> 개인정보 수집·이용에 동의합니다.</span>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-label">스팸방지<span class="req">*</span></div>
+        <div class="form-ctrl">
+          <div class="recaptcha" onclick="this.classList.toggle('on')"><span class="chk"></span> 로봇이 아닙니다 &nbsp;<span class="help">reCAPTCHA</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 가입 액션 -->
+    <div class="form-actions">
+      <a class="btn btn-grey" th:href="@{/mypage}">취소</a>
+      <button type="submit" class="btn btn-navy">가입하기</button>
+      <span class="note-inline">유효성 검증 통과 시 계정 생성</span>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>

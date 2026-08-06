@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title th:text="${pageTitle != null ? pageTitle + ' - 순천향대학교 초·중·고 체험 프로그램' : '순천향대학교 초·중·고 체험 프로그램'}">순천향대학교 초·중·고 체험 프로그램</title>
+  <link rel="stylesheet" th:href="@{/css/common.css}">
+</head>
+<body>
+<div class="site-wrap">
+
+  <header class="site-header">
+    <div class="util-bar">
+      <div class="util-inner">
+        <span>이하은 님</span>
+        <a th:href="@{/mypage}">마이페이지</a>
+        <a th:href="@{/account/signup}">회원가입</a>
+      </div>
+    </div>
+    <div class="header-inner">
+      <a th:href="@{/mypage}" class="brand">
+        <span class="b-sub">SOONCHUNHYANG UNIVERSITY</span>
+        <span class="b-main">초·중·고 체험 프로그램</span>
+      </a>
+      <nav class="gnb">
+        <div class="gnb-group" th:each="group : ${navGroups}"
+             th:classappend="${activeGroupId != null and activeGroupId == group.id} ? 'active'">
+          <a th:href="@{${group.url}}" th:text="${group.title}">메뉴</a>
+          <div class="gnb-drop" th:if="${group.hasDropdown()}">
+            <a th:each="item : ${group.items}"
+               th:href="@{${item.url}}"
+               th:classappend="${activeItemKey != null and activeItemKey == item.key} ? 'active'">
+              <span th:text="${item.title}">항목</span>
+              <span class="soon" th:if="${!item.available}">준비중</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="content-wrap">
+      <div th:replace="~{__${content}__}">내용 영역</div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="f-inner">
+      <b>순천향대학교 초·중·고 체험 프로그램</b><br>
+      충청남도 아산시 순천향로 22 | 담당부서 미래융합센터운영팀 · 041-530-1234 · future@sch.ac.kr<br>
+      본 사이트는 개발 프로토타입 단계이며 표시되는 정보는 예시 데이터입니다.
+    </div>
+  </footer>
+
+</div>
+<script th:src="@{/js/site.js}"></script>
+</body>
+</html>

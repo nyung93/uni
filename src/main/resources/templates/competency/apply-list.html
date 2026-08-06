@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="content">
+
+  <div class="crumb">역량개발 <b>›</b> 프로그램 신청 <b>›</b> 프로그램 리스트</div>
+  <div class="page-title-row"><span class="page-title">프로그램 신청</span></div>
+
+  <div class="app-shell">
+    <div th:replace="~{competency/_sidebar :: sidebar}"></div>
+
+    <div class="app-content">
+      <!-- 검색 -->
+      <div class="search-wrap">
+        <div class="search-inline">
+          <span class="search-ic">🔍</span>
+          <input type="text" placeholder="프로그램명을 입력해주세요.">
+          <button type="button" class="btn-detail" onclick="comingSoonAlert()">상세검색 ▾</button>
+          <button type="button" class="btn-search" onclick="comingSoonAlert()">검색</button>
+        </div>
+      </div>
+
+      <!-- 필터 탭칩 -->
+      <div class="filter-tabs">
+        <div class="ftab active">전체 <b th:text="${#lists.size(programs)}">5</b></div>
+        <div class="ftab">신청 가능한 프로그램 <b th:text="${#lists.size(programs.?[open])}">3</b></div>
+        <div class="ftab">마감 프로그램 <b th:text="${#lists.size(programs.?[!open])}">2</b></div>
+        <div class="ftab">관심 프로그램 <b th:text="${#lists.size(programs.?[favorite])}">1</b></div>
+      </div>
+
+      <!-- 프로그램 카드 그리드 -->
+      <div class="grid-head"><span class="ic">▦</span> 전체 <span th:text="${#lists.size(programs)}">5</span>건</div>
+      <div class="prog-grid">
+        <div class="prog-card" th:each="p : ${programs}" th:classappend="${!p.open} ? 'closed'">
+          <div class="prog-thumb" th:style="'background:' + ${p.gradientCss} + ';'">
+            <div class="tags">
+              <span class="ptag" th:classappend="${p.open} ? 'open' : 'closed'" th:text="${p.open} ? '접수중' : '마감'">접수중</span>
+            </div>
+            <div class="fav-btn" th:classappend="${p.favorite} ? 'on'" th:text="${p.favorite} ? '♥' : '♡'">♡</div>
+            <span th:text="${p.icon}">🤖</span>
+          </div>
+          <div class="prog-body">
+            <div class="prog-cat" th:text="${p.category} + ' | ' + ${p.type}">구분 | 운영형태</div>
+            <div class="prog-title" th:text="${p.title}">프로그램명</div>
+            <div class="prog-meta"><span class="mlabel">장소명</span><span th:text="${p.place}">장소</span></div>
+            <div class="prog-meta"><span class="mlabel">이용대상</span><span th:text="${p.target}">대상</span></div>
+            <div class="prog-meta"><span class="mlabel">신청기간</span><span th:text="${p.applyPeriodShort}">기간</span></div>
+            <div class="prog-foot">
+              <a th:if="${p.open}" class="btn btn-navy btn-mini" th:href="@{'/competency/apply/' + ${p.id}}">신청하기 +</a>
+              <button th:unless="${p.open}" class="btn btn-grey btn-mini" disabled>마감</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 하단 페이징 -->
+      <div class="bottom">
+        <ul class="pagination">
+          <li><a href="#">&lt;</a></li>
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">&gt;</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="content">
+
+  <div class="crumb">학생서비스 <b>›</b> 마이페이지</div>
+  <div class="page-title-row"><span class="page-title">마이페이지<span class="pid">학생</span></span></div>
+
+  <!-- 최초 로그인 얼럿 -->
+  <div class="alert-preview">
+    <div class="ic">🔔</div>
+    <div class="txt">
+      <div class="tt">비밀번호를 설정해주세요</div>
+      <div class="ds">최초 로그인 계정입니다. <b>비밀번호를 설정하기 전까지는 마이페이지의 다른 기능을 이용할 수 없습니다.</b></div>
+    </div>
+    <a class="btn btn-navy btn-mini" th:href="@{/mypage/edit}">비밀번호 설정하기</a>
+  </div>
+
+  <!-- 학생 기본정보 + 역량점수 인증현황 -->
+  <div class="sec two-col">
+    <div class="col-half">
+      <div class="profile-card">
+        <div class="av">🙂</div>
+        <div class="who"><div class="nm">이하은</div><div class="sc">순천향중학교 · 2학년 3반</div></div>
+        <a class="btn btn-edit btn-mini" th:href="@{/mypage/edit}">정보 수정</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat-box"><div class="l">신청 프로그램</div><div class="v">5건</div></div>
+        <div class="stat-box"><div class="l">수료 프로그램</div><div class="v">3건</div></div>
+        <div class="stat-box"><div class="l">총 역량점수</div><div class="v" style="color:var(--gl);">32점</div></div>
+      </div>
+    </div>
+    <div class="col-half">
+      <div class="cred-card">
+        <div class="cred-top">
+          <div class="medal medal-gold">◆</div>
+          <div><div class="cred-grade">글로벌 골드</div><div class="cred-sub">디지털 배지 등급</div></div>
+          <a class="btn btn-navy btn-mini" style="margin-left:auto;" th:href="@{/competency/certificate}">배지·마일리지 상세</a>
+        </div>
+        <div class="cred-scores">
+          <div class="it"><div class="l">총점수</div><div class="v">32</div></div>
+          <div class="it"><div class="l">창의</div><div class="v pt-cr">10</div></div>
+          <div class="it"><div class="l">공감</div><div class="v pt-em">10</div></div>
+          <div class="it"><div class="l">글로벌</div><div class="v pt-gl">12</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 배너 영역 -->
+  <div class="sec">
+    <div class="banner-grid">
+      <a class="banner b-sky" th:href="@{/career/ai-advisor}"><span class="ic">🤖</span><span class="lb">AI 어드바이저</span></a>
+      <a class="banner" th:href="@{/competency/apply}"><span class="ic">📝</span><span class="lb">프로그램 신청</span></a>
+      <a class="banner b-blue" th:href="@{/competency/history}"><span class="ic">📋</span><span class="lb">프로그램 신청내역</span></a>
+      <a class="banner b-green" th:href="@{/competency/certificate}"><span class="ic">🏅</span><span class="lb">역량점수 현황</span></a>
+    </div>
+  </div>
+
+  <!-- 추천 프로그램 목록 (캘린더형) -->
+  <div class="sec">
+    <div class="cal-wrap">
+      <div class="cal-mini">
+        <div class="cal-mini-head"><span>2026년 8월</span><span class="nav"><span>‹</span><span>›</span></span></div>
+        <table class="cal-grid">
+          <thead><tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="dcell dim"><div class="dnum">26</div></td><td class="dcell dim"><div class="dnum">27</div></td><td class="dcell dim"><div class="dnum">28</div></td><td class="dcell dim"><div class="dnum">29</div></td><td class="dcell dim"><div class="dnum">30</div></td><td class="dcell dim"><div class="dnum">31</div></td>
+              <td class="dcell sun"><div class="dnum">1</div><span class="dcnt">1건</span></td>
+            </tr>
+            <tr>
+              <td class="dcell sun"><div class="dnum">2</div></td><td class="dcell"><div class="dnum">3</div></td><td class="dcell"><div class="dnum">4</div></td>
+              <td class="dcell sel"><div class="dnum">5</div><span class="dcnt">2건</span></td>
+              <td class="dcell"><div class="dnum">6</div><span class="dcnt">1건</span></td><td class="dcell"><div class="dnum">7</div></td>
+              <td class="dcell sun"><div class="dnum">8</div><span class="dcnt">1건</span></td>
+            </tr>
+            <tr>
+              <td class="dcell sun"><div class="dnum">9</div><span class="dcnt">1건</span></td><td class="dcell"><div class="dnum">10</div></td><td class="dcell"><div class="dnum">11</div></td><td class="dcell"><div class="dnum">12</div></td><td class="dcell"><div class="dnum">13</div></td><td class="dcell"><div class="dnum">14</div></td>
+              <td class="dcell sun"><div class="dnum">15</div></td>
+            </tr>
+            <tr>
+              <td class="dcell sun"><div class="dnum">16</div></td><td class="dcell"><div class="dnum">17</div></td><td class="dcell"><div class="dnum">18</div></td><td class="dcell"><div class="dnum">19</div></td><td class="dcell"><div class="dnum">20</div><span class="dcnt">1건</span></td><td class="dcell"><div class="dnum">21</div></td>
+              <td class="dcell sun"><div class="dnum">22</div></td>
+            </tr>
+            <tr>
+              <td class="dcell sun"><div class="dnum">23</div></td><td class="dcell"><div class="dnum">24</div></td><td class="dcell"><div class="dnum">25</div></td><td class="dcell"><div class="dnum">26</div></td><td class="dcell"><div class="dnum">27</div></td><td class="dcell"><div class="dnum">28</div><span class="dcnt">1건</span></td>
+              <td class="dcell sun"><div class="dnum">29</div></td>
+            </tr>
+            <tr>
+              <td class="dcell sun"><div class="dnum">30</div></td><td class="dcell"><div class="dnum">31</div></td>
+              <td class="dcell dim"><div class="dnum">1</div></td><td class="dcell dim"><div class="dnum">2</div></td><td class="dcell dim"><div class="dnum">3</div></td><td class="dcell dim"><div class="dnum">4</div></td><td class="dcell dim sun"><div class="dnum">5</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="cal-list">
+        <div class="cal-list-head">추천 비교과 프로그램 일정</div>
+        <ul class="cal-sched">
+          <li><a th:href="@{/competency/apply}"><div class="cs-date">AUG<b>5</b></div><div class="cs-body"><div class="cs-t">나의 진로 설계: 꿈을 찾는 시간</div><div class="cs-meta"><span class="cs-tag">중등 진로설계</span>📍 청소년지원센터</div></div></a></li>
+          <li><a th:href="@{/competency/apply}"><div class="cs-date">AUG<b>6</b></div><div class="cs-body"><div class="cs-t">과학 탐구 동아리</div><div class="cs-meta"><span class="cs-tag">중등 과학탐구</span>📍 융합과학실</div></div></a></li>
+          <li><a th:href="@{/competency/apply}"><div class="cs-date">AUG<b>8</b></div><div class="cs-body"><div class="cs-t">인성교육 워크숍</div><div class="cs-meta"><span class="cs-tag">중등 인성교육</span>📍 학생회관</div></div></a></li>
+          <li><a th:href="@{/competency/apply}"><div class="cs-date">AUG<b>9</b></div><div class="cs-body"><div class="cs-t">창의 로봇 경진대회</div><div class="cs-meta"><span class="cs-tag">중등 창의융합</span>📍 미래융합센터</div></div></a></li>
+        </ul>
+        <div class="cal-more"><a class="btn btn-grey btn-mini" th:href="@{/competency/apply}">더보기 +</a></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
