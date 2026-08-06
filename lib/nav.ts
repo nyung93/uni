@@ -3,6 +3,8 @@ export interface NavItem {
   title: string;
   url: string;
   available: boolean;
+  /** true면 외부 사이트 링크 — 새 탭으로 열리고 GNB active 판정에서 제외된다. */
+  external?: boolean;
 }
 
 export interface NavGroup {
@@ -25,11 +27,17 @@ export const navGroups: NavGroup[] = [
   },
   {
     id: 2,
-    title: "프로그램 소개",
-    url: "/intro/department",
+    title: "인재 파이프라인 소개",
+    url: "/intro/program",
     items: [
-      { key: "intro-department", title: "부서소개", url: "/intro/department", available: false },
-      { key: "intro-program", title: "체험 프로그램 소개", url: "/intro/program", available: false },
+      {
+        key: "intro-department",
+        title: "순천향대학교 소개",
+        url: "https://home.sch.ac.kr/sch/01/010300.jsp",
+        available: true,
+        external: true,
+      },
+      { key: "intro-program", title: "초·중·고 인재 파이프라인 소개", url: "/intro/program", available: false },
     ],
   },
   {

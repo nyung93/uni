@@ -31,16 +31,22 @@ export default function Header() {
                 <Link href={group.url}>{group.title}</Link>
                 {group.items.length > 1 && (
                   <div className="gnb-drop">
-                    {group.items.map((item) => (
-                      <Link
-                        key={item.key}
-                        href={item.url}
-                        className={pathname?.startsWith(item.url) ? "active" : ""}
-                      >
-                        <span>{item.title}</span>
-                        {!item.available && <span className="soon">준비중</span>}
-                      </Link>
-                    ))}
+                    {group.items.map((item) =>
+                      item.external ? (
+                        <a key={item.key} href={item.url} target="_blank" rel="noopener noreferrer">
+                          <span>{item.title}</span>
+                        </a>
+                      ) : (
+                        <Link
+                          key={item.key}
+                          href={item.url}
+                          className={pathname?.startsWith(item.url) ? "active" : ""}
+                        >
+                          <span>{item.title}</span>
+                          {!item.available && <span className="soon">준비중</span>}
+                        </Link>
+                      )
+                    )}
                   </div>
                 )}
               </div>
