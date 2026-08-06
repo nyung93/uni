@@ -40,6 +40,10 @@ export default function SignupPage() {
             </div>
           </div>
           <div className="form-row">
+            <div className="form-label">이름<span className="req">*</span></div>
+            <div className="form-ctrl"><input type="text" className="mf-input" style={{ width: "45%" }} /></div>
+          </div>
+          <div className="form-row">
             <div className="form-label">비밀번호<span className="req">*</span></div>
             <div className="form-ctrl">
               <input type="password" className="mf-input" style={{ width: "55%" }} />
@@ -58,11 +62,7 @@ export default function SignupPage() {
         </div>
 
         <div className="form-section">
-          <div className="sec-title">개인 정보</div>
-          <div className="form-row">
-            <div className="form-label">이름<span className="req">*</span></div>
-            <div className="form-ctrl"><input type="text" className="mf-input" style={{ width: "45%" }} /></div>
-          </div>
+          <div className="sec-title">학교 정보</div>
           <div className="form-row">
             <div className="form-label">회원구분<span className="req">*</span></div>
             <div className="form-ctrl">
@@ -79,15 +79,18 @@ export default function SignupPage() {
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="form-section">
-          <div className="sec-title">학교 정보</div>
           <div className="form-row">
             <div className="form-label">학교<span className="req">*</span></div>
             <div className="form-ctrl">
               <input type="text" className="mf-input" style={{ width: "50%" }} placeholder="학교명 검색" />
               <button type="button" className="btn btn-grey btn-mini" onClick={comingSoonAlert}>학교 검색</button>
+            </div>
+          </div>
+          <div className="form-row">
+            <div className="form-label">학교주소<span className="req">*</span></div>
+            <div className="form-ctrl">
+              <select style={{ width: 130 }}><option>시/도</option></select>
+              <select style={{ width: 130 }}><option>구/군</option></select>
             </div>
           </div>
           <div className="form-row">
