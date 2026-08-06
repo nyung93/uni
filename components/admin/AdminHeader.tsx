@@ -13,6 +13,7 @@ export default function AdminHeader() {
         <div className="util-inner">
           <span>관리자 모드</span>
           <span>홍길동 님</span>
+          <Link href="/login">로그인</Link>
           <Link href="/mypage">학생 사이트로 이동</Link>
         </div>
       </div>

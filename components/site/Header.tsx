@@ -14,6 +14,7 @@ export default function Header() {
           <span>이하은 님</span>
           <Link href="/mypage">마이페이지</Link>
           <Link href="/account/signup">회원가입</Link>
+          <Link href="/login">로그인</Link>
           <Link href="/admin/programs">관리자</Link>
         </div>
       </div>

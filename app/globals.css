@@ -532,3 +532,44 @@ select,input[type=text],input[type=date],input[type=number],input[type=email],in
 .area-row .bar i{display:block;height:100%;border-radius:8px;}
 .area-row .cnt{text-align:right;font-weight:bold;}
 .a-cr i{background:var(--cr);} .a-em i{background:var(--em);} .a-gl i{background:var(--gl);}
+
+/* =========================================================
+   A.4 통합 로그인
+   ========================================================= */
+.login-wrap{max-width:460px;margin:20px auto 0;}
+.tab-row{display:flex;gap:6px;margin-bottom:0;}
+.tab-btn{flex:1;text-align:center;padding:10px 0;border:1px solid var(--bd);border-bottom:none;border-radius:8px 8px 0 0;
+        font-size:13px;font-weight:bold;color:var(--sub);background:var(--bg);cursor:pointer;}
+.tab-btn.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+
+.login-card{border:1px solid var(--bd2);border-radius:0 0 8px 8px;padding:20px 22px;background:#fff;}
+.card-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.card-h .t{font-size:14px;font-weight:bold;}
+.mode-toggle{font-size:11px;color:var(--sub);background:none;border:none;cursor:pointer;}
+.mode-toggle b{color:var(--navy);cursor:pointer;text-decoration:underline;}
+.f-row{margin-bottom:10px;}
+.f-row label{display:block;font-size:11px;color:var(--sub);font-weight:bold;margin-bottom:4px;}
+.login-actions .btn{width:100%;padding:9px;font-size:13px;margin-top:2px;}
+.find-links{text-align:center;margin-top:10px;font-size:11px;color:var(--sub);}
+.find-links button{background:none;border:none;color:var(--navy);cursor:pointer;font-weight:bold;font-size:11px;padding:0;}
+.find-links .sep{margin:0 8px;color:var(--bd);}
+
+.first-login-box{margin-top:12px;padding:12px 14px;border:1px dashed var(--navy);border-radius:6px;background:#f8fbff;}
+.fl-tt{font-size:11px;font-weight:bold;color:var(--navy);margin-bottom:8px;}
+.fl-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-bottom:7px;}
+.fl-row2{display:flex;gap:7px;margin-bottom:7px;}
+.fl-act .btn{width:100%;padding:8px;font-size:12px;}
+.fl-note{font-size:10px;color:var(--red);margin-top:8px;line-height:1.5;}
+
+/* 아이디/비밀번호 찾기 모달 */
+.pp-cols{display:flex;gap:20px;}
+.pp-col{flex:1;}
+.pp-col .pc-t{font-size:11.5px;font-weight:bold;margin-bottom:8px;}
+.pc-row{display:flex;gap:6px;margin-bottom:6px;}
+.pc-result{margin-top:8px;font-size:10.5px;background:var(--bg);border-radius:4px;padding:8px 10px;color:var(--navy);}
+
+/* =========================================================
+   A.7 학생 조회
+   ========================================================= */
+.t-join{background:#e8f0fe;color:var(--navy);} .t-auto{background:#fff3e0;color:#e65100;}
+.dash{color:#c2c8cf;}
